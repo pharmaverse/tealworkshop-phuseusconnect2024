@@ -27,6 +27,20 @@ app <- teal::init(
         "Combinations Main" = teal.widgets::ggplot2_args(labs = list(title = NULL))
       )
     )
+  ),
+  # Add your code here:
+  filter = teal_slices(
+    teal_slice("ADSL", "COUNTRY", "country", selected = "USA", fixed = TRUE),
+    teal_slice("ADSL", "RACE", "race", selected = "ASIAN"),
+    teal_slice("ADSL", id = "custom1", title = "Adult Female", expr = "SEX == 'F' & AGE >= 18"),
+    teal_slice("ADSL", "ETHNIC", "ethnic", anchored = TRUE),
+    module_specific = TRUE,
+    mapping = list(
+      "PHUSE Data Table" = c("country", "ethnic"),
+      "PHUSE Missing Data" = c("race"),
+      global_filters = "custom1"
+    ),
+    count_type = "all"
   )
 )
 
