@@ -1,3 +1,9 @@
+# Let's create a very simple teal app
+# 
+# ?init
+# what are the required parameters ?
+# 
+
 library(teal)
 
 app <- init(
