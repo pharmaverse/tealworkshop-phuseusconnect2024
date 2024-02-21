@@ -5,8 +5,8 @@ ADAE <- teal.modules.general::rADAE
 
 app <- teal::init(
   data = cdisc_data(
-    "ADSL" = ADSL,
-    "ADAE" = ADAE,
+    ADSL = ADSL,
+    ADAE = ADAE,
     code = "
       ADSL <- teal.modules.general::rADSL
       ADAE <- teal.modules.general::rADAE
@@ -14,12 +14,12 @@ app <- teal::init(
   ),
   modules = teal::modules(
     teal.modules.general::tm_data_table(
-      label = "PHUSE Data Table",
+      label = "Data Table",
       variables_selected = list(ADSL = c("STUDYID", "USUBJID", "SUBJID", "SITEID", "AGE", "SEX", "COUNTRY")),
       dt_args = list(caption = "ADSL Table Caption")
     ),
     teal.modules.general::tm_missing_data(
-      label = "PHUSE Missing Data",
+      label = "Missing Data",
       ggplot2_args = list(
         "Combinations Hist" = teal.widgets::ggplot2_args(
           labs = list(subtitle = "Plot produced by Missing Data Module", caption = NULL)
@@ -36,8 +36,8 @@ app <- teal::init(
     teal_slice("ADSL", "ETHNIC", "ethnic", anchored = TRUE),
     module_specific = TRUE,
     mapping = list(
-      "PHUSE Data Table" = c("country", "ethnic"),
-      "PHUSE Missing Data" = c("race"),
+      "Data Table" = c("country", "ethnic"),
+      "Missing Data" = c("race"),
       global_filters = "custom1"
     ),
     count_type = "all"
