@@ -1,7 +1,12 @@
-# teal with non-cdisc data
+# Let's create a very simple teal app
+# 
+# ?teal::init
+# - what are the required parameters?
 # 
 # ?teal_data
 # Show what the data object looks like
+# 
+# ?modules and module
 # 
 # Let's use a module from teal.modules.general
 # ?teal.modules.general -> index

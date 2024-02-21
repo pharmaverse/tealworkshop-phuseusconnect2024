@@ -53,7 +53,7 @@ app <- init(
       hlt = choices_selected(
         choices = variable_choices(ADAE, c("AEBODSYS", "AESOC")),
         selected = "AEBODSYS"
-      ),   
+      ),
       llt = choices_selected(
         choices = variable_choices(ADAE, c("AETERM", "AEDECOD")),
         selected = c("AEDECOD")
@@ -76,13 +76,9 @@ app <- init(
     teal_slice("ADAE", id = "aerel", expr = "AEREL == 'Y' & AETOXGR %in% c('3', '4', '5')", title = "Grade 3+ Related Events"),
     teal_slice("ADSL", "SEX", id = "sex", fixed = TRUE),
     teal_slice("ADSL", id = "age", expr = "AGE >= 18 & AGE <= 30", title = "Young Adult"),
-    module_specific = TRUE,
-    mapping = list(
-      "Demographic Table" = c("saffl"),
-      "AE Table" = c("saffl", "aerel"),
-      global_filters = c("sex", "age")
-    ),
-    count_type = "all"
+    count_type = "all",
+    # your code here
+    
   )
 )
 
